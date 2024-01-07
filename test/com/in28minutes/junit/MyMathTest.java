@@ -5,20 +5,18 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class MyMathTest {
+	private MyMath math = new MyMath();
 
 	@Test
-	void test() {
-//		fail("Not yet implemented");
-		
-		int[] numbers = {1, 2, 3};
-		MyMath math = new MyMath();
-		int result = math.calculateSum(numbers);
-		System.out.println(result);
-		int expectedResult = 5;
-		assertEquals(expectedResult, result);
-		
+	void calculateSum_ThreeMemberArray() {
+		assertEquals(6, math.calculateSum(new int[] {1, 2, 3}));
 		// Absence of failure is success
 		// Test Condition or Assert
+	}
+	
+	@Test
+	void calculateSum_ZeroLengthArray() {
+		assertEquals(0, math.calculateSum(new int[] {}));
 	}
 
 }
